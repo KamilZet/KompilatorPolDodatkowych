@@ -17,6 +17,7 @@ namespace KompilatorPólDodatkowych
         {
             InitializeComponent();
             this.PreviewKeyDown += new System.Windows.Input.KeyEventHandler(HandleEsc);
+
         }
 
 
