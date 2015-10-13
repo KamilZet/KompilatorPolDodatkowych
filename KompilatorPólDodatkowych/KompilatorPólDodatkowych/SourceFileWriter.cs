@@ -8,6 +8,10 @@ using System.Xml.Linq;
 
 namespace KompilatorPólDodatkowych
 {
+    /*
+     * base class for all classes responsible for saving
+     * map file fields in Spaceman custom fields file format
+     */
     public class SourceFileWriter
     {
         private XDocument doc = null;
