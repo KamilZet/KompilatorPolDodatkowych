@@ -72,25 +72,36 @@ namespace KompilatorPólDodatkowych
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
 
+            
+
             if (this.txMapFile.Text == "" || this.txOutDir.Text == "") 
             {
                 System.Windows.Forms.MessageBox.Show("Input parameters missing!");
                 return;
             }
 
-            MapReader mr = new MapReader();
-            
-            mr.ReadFromTxt(this.txMapFile.Text);
+            try
+            {
+                MapReader mr = new MapReader();
 
-            SourceFileWriter sfw = new SourceFileWriterXDoc();
-            
-            sfw.AddBody(mr.CustomFieldsList);
+                mr.ReadFromTxt(this.txMapFile.Text);
 
-            sfw.Save(this.txOutDir.Text);
+                SourceFileWriter sfw = new SourceFileWriterXDoc();
 
-            this.btnExecute.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FF49F500"));
+                sfw.AddBody(mr.CustomFieldsList);
 
-            System.Windows.Forms.MessageBox.Show("Prcessing completed!");
+                sfw.Save(this.txOutDir.Text);
+
+                this.btnExecute.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FF49F500"));
+
+                System.Windows.Forms.MessageBox.Show("Processing completed succesfully!");
+            }
+            catch (Exception err)
+            {
+                System.Windows.Forms.MessageBox.Show("Processing failed!");
+            }
+
+
         }
 
         private void txMapFile_TextChanged(object sender, TextChangedEventArgs e)
