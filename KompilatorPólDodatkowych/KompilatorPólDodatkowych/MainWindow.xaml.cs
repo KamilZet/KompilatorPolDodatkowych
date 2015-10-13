@@ -34,11 +34,13 @@ namespace KompilatorPólDodatkowych
             if (File.Exists(txMapFile.Text) && Directory.Exists(txOutDir.Text))
             {
                 this.btnExecute.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFFFFF06"));
+                
                 this.btnExecute.IsEnabled = true;
             }
             else
             {
                 this.btnExecute.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFEA405F"));
+                
                 this.btnExecute.IsEnabled = false;
             }
         }
