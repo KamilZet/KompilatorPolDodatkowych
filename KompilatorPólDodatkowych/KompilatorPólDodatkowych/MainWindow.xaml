@@ -17,10 +17,10 @@
         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveBorderColorKey}}"/>
     </Window.Background>
     <Grid HorizontalAlignment="Center" 
-          VerticalAlignment="Center" >
+          VerticalAlignment="Center">
         <TextBox Name="txMapFile" HorizontalAlignment="Left" Height="58" Margin="132,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="717"
                         TextChanged="validateParams"
-                        FontSize="14" FontFamily="Tahoma"
+                        FontSize="16" FontFamily="Tahoma"
                         >
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -32,12 +32,13 @@
                 Style="{DynamicResource RoundCorner}" FontSize="16"/>
         <TextBox Name="txOutDir" HorizontalAlignment="Left" Height="58" Margin="132,73,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="717"
                  TextChanged="validateParams"
-                 FontSize="14" FontFamily="Tahoma"/>
+                 FontSize="16" FontFamily="Tahoma"/>
         <Button Name="btnBrowseOutDir"  Content="Output folder" HorizontalAlignment="Left" Height="58" Margin="10,73,0,0" VerticalAlignment="Top" Width="117" Click="Button_Click_1"
                 Style="{DynamicResource RoundCorner}" FontSize="16"/>
         <Button Name ="btnExecute" Content="Execute program" HorizontalAlignment="Left" Height="83" Margin="10,136,0,0" VerticalAlignment="Top" Width="839" Click="Button_Click_2" 
                 Background="#FFEA405F"
-                Style="{DynamicResource RoundCorner}" FontSize="16"/>
+                Style="{DynamicResource RoundCorner}" FontSize="16"
+                IsEnabled="False"/>
 
     </Grid>
 </Window>
