@@ -92,4 +92,12 @@
         </Setter>
 
     </Style>
+    <ControlTemplate x:Key="TextBoxBaseControlTemplate" TargetType="{x:Type TextBoxBase}">
+        <Border Background="{TemplateBinding Background}" 
+                x:Name="Bd" BorderBrush="Black"
+                BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="10">
+            <ScrollViewer x:Name="PART_ContentHost"/>
+        </Border>
+    </ControlTemplate>    
+    
 </ResourceDictionary>
