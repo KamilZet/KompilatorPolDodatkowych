@@ -19,7 +19,7 @@
                                         </TransformGroup>
                                     </RadialGradientBrush.RelativeTransform>
                                     <GradientStop Offset="1" Color="#00000000"/>
-                                    <GradientStop Offset="0.3" Color="#FFFFFFFF"/>
+                                    <GradientStop Offset="0.3" Color="#FFC3C3C3"/>
                                 </RadialGradientBrush>
                             </Border.Background>
                             <ContentPresenter HorizontalAlignment="Center"
@@ -45,11 +45,13 @@
                             </Setter>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="BorderBrush" TargetName="border" Value="#FFEA405F"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="White"/>
+                            <Setter Property="Cursor" Value="Hand"/>
                             <Setter Property="Background" Value="Aqua"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Opacity" TargetName="grid" Value="0.25"/>
+                            <Setter Property="Cursor" Value="Cross"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

@@ -5,6 +5,7 @@ using System.Windows.Controls;
 using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Threading;
 
 namespace KompilatorPólDodatkowych
 {
@@ -13,13 +14,41 @@ namespace KompilatorPólDodatkowych
     /// </summary>
     public partial class MainWindow : Window
     {
+        public delegate void ReadyToShowDelegate(object sender, EventArgs args);
+
+        public event ReadyToShowDelegate ReadyToShow;
+
+        private DispatcherTimer timer;
+
         public MainWindow()
         {
             InitializeComponent();
             this.PreviewKeyDown += new System.Windows.Input.KeyEventHandler(HandleEsc);
 
+            /*
+             * Set splashscreen thread
+             * 
+             */
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(2); // set number of seconds, after which MainWindow will be displayed
+            timer.Tick += new EventHandler(timer_Tick);
+            timer.Start();
+
         }
 
+        void timer_Tick(object sender, EventArgs e)
+        {
+            // This timer imitates a time-consuming operation (or a whole bunch of
+            // such operations).
+            // When done, it raises a custom event to let the splash screen know that its time is up.
+
+            timer.Stop();
+
+            if (ReadyToShow != null)
+            {
+                ReadyToShow(this, null);
+            }
+        }
 
         private void HandleEsc(object sender, System.Windows.Input.KeyEventArgs e)
         {

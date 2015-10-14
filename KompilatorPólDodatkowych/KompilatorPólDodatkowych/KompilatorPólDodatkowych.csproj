@@ -57,6 +57,13 @@
     <Compile Include="SourceFileWriter.cs" />
     <Compile Include="SourceFileWriterBody.cs" />
     <Compile Include="SourceFileWriterXDoc.cs" />
+    <Compile Include="SplashWindow.xaml.cs">
+      <DependentUpon>SplashWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="SplashWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Styles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

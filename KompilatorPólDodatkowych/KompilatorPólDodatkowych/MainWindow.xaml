@@ -6,6 +6,19 @@
         Width="887.447"
         WindowStartupLocation="CenterScreen"
         WindowStyle="ToolWindow">
+    <Window.Background>
+        <RadialGradientBrush GradientOrigin="0.496,1.052">
+            <RadialGradientBrush.RelativeTransform>
+                <TransformGroup>
+                    <ScaleTransform CenterX="0.5" CenterY="0.5" 
+                                   ScaleX="1.5" ScaleY="1.5"/>
+                    <TranslateTransform X="0.02" Y="0.3"/>
+                </TransformGroup>
+            </RadialGradientBrush.RelativeTransform>
+            <GradientStop Offset="1" Color="#FF535353"/>
+            <GradientStop Offset="0.3" Color="#FFB9B9B9"/>
+        </RadialGradientBrush>
+    </Window.Background>
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -13,12 +26,12 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
-    <Window.Background>
+    <!--<Window.Background>
         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveBorderColorKey}}"/>
-    </Window.Background>
+    </Window.Background>-->
     <Grid HorizontalAlignment="Center" 
           VerticalAlignment="Center">
-        <TextBox Name="txMapFile" HorizontalAlignment="Left" Height="58" Margin="132,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="717"
+        <TextBox Name="txMapFile" HorizontalAlignment="Left" Height="58" Margin="155,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="694"
                         TextChanged="validateParams"
                         FontSize="16" FontFamily="Tahoma"
                         Template="{StaticResource TextBoxBaseControlTemplate}">
@@ -28,18 +41,19 @@
                 </Style>
             </TextBox.Resources>
         </TextBox>
-        <Button Name ="btnBrowseMap" Content="Map file" HorizontalAlignment="Left" Height="58" Margin="10,10,0,0" VerticalAlignment="Top" Width="117" Click="Button_Click"
-                Style="{DynamicResource RoundCorner}" FontSize="16"/>
-        <TextBox Name="txOutDir" HorizontalAlignment="Left" Height="58" Margin="132,73,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="717"
+        <Button Name ="btnBrowseMap" Content="Map file" HorizontalAlignment="Left" Height="58" Margin="10,10,0,0" VerticalAlignment="Top" Width="140" Click="Button_Click"
+                Style="{DynamicResource RoundCorner}" 
+                FontSize="16" Foreground="White"/>
+        <TextBox Name="txOutDir" HorizontalAlignment="Left" Height="58" Margin="155,73,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="694"
                  TextChanged="validateParams"
                  FontSize="16" FontFamily="Tahoma"
                  Template="{StaticResource TextBoxBaseControlTemplate}"/>
-        <Button Name="btnBrowseOutDir"  Content="Output folder" HorizontalAlignment="Left" Height="58" Margin="10,73,0,0" VerticalAlignment="Top" Width="117" Click="Button_Click_1"
-                FontSize="16"
+        <Button Name="btnBrowseOutDir"  Content="Output folder" HorizontalAlignment="Left" Height="58" Margin="10,73,0,0" VerticalAlignment="Top" Width="140" Click="Button_Click_1"
+                FontSize="16" Foreground="White"
                 Style="{DynamicResource RoundCorner}" />
         <Button Name ="btnExecute" Content="Execute program" HorizontalAlignment="Left" Height="83" Margin="10,136,0,0" VerticalAlignment="Top" Width="839" Click="Button_Click_2" 
                 Background="#FFEA405F"
-                FontSize="16"
+                FontSize="16" Foreground="White"
                 Style="{DynamicResource RoundCorner}" 
                 IsEnabled="False"/>
 
